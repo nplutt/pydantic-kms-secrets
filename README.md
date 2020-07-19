@@ -60,7 +60,7 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
 
-
+# Don't forget to call decrypt_kms_secrets, if you don't the secrets will not be decrypted
 settings = decrypt_kms_secrets(Settings())
 ```
 
