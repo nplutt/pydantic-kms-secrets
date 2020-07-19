@@ -8,6 +8,7 @@ setup(
     author_email="nplutt@gmail.com",
     license='MIT',
     long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     packages=['pydantic_kms_secrets'],
     entry_points={'console_scripts': ['pks = cli:main']}
 )
