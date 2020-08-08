@@ -1,4 +1,4 @@
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
 from pydantic_kms_secrets.kms import encrypt, decrypt
 
 
@@ -17,11 +17,13 @@ ENCRYPTED_STRING = \
     'EQQMEwdkJER1EPHbkZMyAgEQgCAMgTpHM2IoAevhphwDYadShLxWVORBR59uG3wUM5YR0A=='
 
 
-@patch('pydantic_kms_secrets.kms.client')
-def test_encrypt(client_mock):
+@patch('pydantic_kms_secrets.kms.boto3')
+def test_encrypt(boto3_mock):
+    client_mock = MagicMock()
     client_mock.encrypt.return_value = {
         'CiphertextBlob': ENCRYPTED_BYTES,
     }
+    boto3_mock.client.return_value = client_mock
 
     assert encrypt('key', 'value') == ENCRYPTED_STRING
 
@@ -31,11 +33,13 @@ def test_encrypt(client_mock):
     )
 
 
-@patch('pydantic_kms_secrets.kms.client')
-def test_decrypt(client_mock):
+@patch('pydantic_kms_secrets.kms.boto3')
+def test_decrypt(boto3_mock):
+    client_mock = MagicMock()
     client_mock.decrypt.return_value = {
         'Plaintext': b'stuff',
     }
+    boto3_mock.client.return_value = client_mock
 
     assert decrypt('key', ENCRYPTED_STRING) == 'stuff'
 
