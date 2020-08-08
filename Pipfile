@@ -6,6 +6,9 @@ verify_ssl = true
 [dev-packages]
 pytest = "*"
 pydantic-kms-secrets = {editable = true,path = "."}
+pydantic = "*"
+black = "==19.10b0"
+pytest-cov = "*"
 
 [packages]
 boto3 = "*"

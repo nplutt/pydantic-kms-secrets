@@ -17,7 +17,6 @@ class KMSSecretStr:
     def validate(cls, value: Any) -> 'KMSSecretStr':
         if isinstance(value, cls):
             return value
-        # value = str_validator(value)
         return cls(value)
 
     def __init__(self, value: str):

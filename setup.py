@@ -10,5 +10,5 @@ setup(
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     packages=['pydantic_kms_secrets'],
-    entry_points={'console_scripts': ['pks = cli:main']}
+    entry_points={'console_scripts': ['pks = pydantic_kms_secrets.cli:main']}
 )
