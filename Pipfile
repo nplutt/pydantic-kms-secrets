@@ -9,6 +9,7 @@ pydantic-kms-secrets = {editable = true,path = "."}
 pydantic = "*"
 black = "==19.10b0"
 pytest-cov = "*"
+isort = "*"
 
 [packages]
 boto3 = "*"

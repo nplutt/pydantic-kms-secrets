@@ -1,5 +1,6 @@
 from setuptools import setup
 
+
 setup(
     name="pydantic_kms_secrets",
     version="0.1.1",
