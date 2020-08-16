@@ -52,7 +52,7 @@ would look something like:
 **Pydantic Settings Model**
 ```python
 from pydantic import BaseSettings
-from src import KMSSecretStr, decrypt_kms_secrets
+from pydantic_kms_secrets import KMSSecretStr, decrypt_kms_secrets
 
 
 class Settings(BaseSettings):

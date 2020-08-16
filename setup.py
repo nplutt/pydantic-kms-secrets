@@ -1,4 +1,4 @@
-from setuptools import find_packages, setup
+from setuptools import setup
 
 
 setup(
@@ -10,16 +10,19 @@ setup(
     license="MIT",
     url="https://github.com/nplutt/pydantic-kms-secrets",
     project_urls={
-        "Documentation": "https://github.com/nplutt/pydantic-kms-secrets/",
         "Source Code": "https://github.com/nplutt/pydantic-kms-secrets/",
     },
     keywords="pydantic aws secrets kms secrets-management environment-variables python",
+    classifiers=[
+        "Intended Audience :: Developers",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+    ],
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     python_requires=">=3.6",
-    packages=find_packages("src/"),
-    package_dir={"": "src/"},
-    include_package_data=True,
+    packages=["pydantic_kms_secrets"],
     entry_points={"console_scripts": ["pks = pydantic_kms_secrets.cli:main"]},
     install_requires=["boto3"],
     extras_require={

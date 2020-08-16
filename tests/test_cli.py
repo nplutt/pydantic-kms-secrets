@@ -2,7 +2,7 @@ from unittest.mock import MagicMock, patch
 
 from pytest import mark
 
-from src.cli import main, parse_args
+from pydantic_kms_secrets.cli import main, parse_args
 
 
 @mark.parametrize(
@@ -38,8 +38,8 @@ from src.cli import main, parse_args
         ),
     ),
 )
-@patch("src.cli.encrypt", return_value="encrypted_value")
-@patch("src.cli.decrypt", return_value="decrypted_value")
+@patch("pydantic_kms_secrets.cli.encrypt", return_value="encrypted_value")
+@patch("pydantic_kms_secrets.cli.decrypt", return_value="decrypted_value")
 def test_parse_args(
     decrypt_mock, encrypt_mock, args, decrypt_called, encrypt_called, expected,
 ):
@@ -56,9 +56,9 @@ def test_parse_args(
         encrypt_mock.assert_not_called()
 
 
-@patch("src.cli.print")
-@patch("src.cli.parse_args")
-@patch("src.cli.initialize_parser")
+@patch("pydantic_kms_secrets.cli.print")
+@patch("pydantic_kms_secrets.cli.parse_args")
+@patch("pydantic_kms_secrets.cli.initialize_parser")
 def test_main(
     initialize_parser_mock, parse_args_mock, print_mock,
 ):

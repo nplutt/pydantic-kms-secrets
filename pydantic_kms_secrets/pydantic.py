@@ -1,6 +1,6 @@
 from typing import Any, Callable, Dict, Generator, Optional
 
-from src import decrypt
+from pydantic_kms_secrets import decrypt
 
 
 CallableGenerator = Generator[Callable[..., Any], None, None]

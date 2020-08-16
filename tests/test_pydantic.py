@@ -3,7 +3,7 @@ from unittest.mock import patch
 from pytest import fixture
 
 from pydantic import BaseSettings
-from src.pydantic import KMSSecretStr, decrypt_kms_secrets
+from pydantic_kms_secrets.pydantic import KMSSecretStr, decrypt_kms_secrets
 
 
 @fixture
@@ -25,7 +25,7 @@ def test_kms_secret_str_equal(kms_secret_str):
     assert kms_secret_str != str(kms_secret_str)
 
 
-@patch("src.pydantic.decrypt", return_value="decrypted")
+@patch("pydantic_kms_secrets.pydantic.decrypt", return_value="decrypted")
 def test_kms_secret_decrypt_secret_value(decrypt_mock, kms_secret_str):
     assert kms_secret_str.decrypt_secret_value("key") == "decrypted"
     assert kms_secret_str._secret_value == "decrypted"
@@ -41,7 +41,7 @@ def test_kms_secret_str_get_secret_value(kms_secret_str):
     assert kms_secret_str.get_secret_value() == "secret-value"
 
 
-@patch("src.pydantic.decrypt", return_value="decrypted")
+@patch("pydantic_kms_secrets.pydantic.decrypt", return_value="decrypted")
 def test_decrypt_kms_secrets(decrypt_mock):
     class Settings(BaseSettings):
         env: str
