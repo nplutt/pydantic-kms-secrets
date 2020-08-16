@@ -1,6 +1,6 @@
 import argparse
 
-from pydantic_kms_secrets.kms import decrypt, encrypt
+from src.kms import decrypt, encrypt
 
 
 def initialize_parser() -> argparse.ArgumentParser:
