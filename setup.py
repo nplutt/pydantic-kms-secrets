@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="pydantic_kms_secrets",
-    version="0.2.0",
+    version="0.3.0",
     description="Utility to decrypt and encrypt secrets using AWS KMS keys that is compatible with pydantic models",
     author="Nick Plutt",
     author_email="nplutt@gmail.com",
