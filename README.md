@@ -1,6 +1,7 @@
 # pydantic-kms-secrets
 [![PyPI version](https://badge.fury.io/py/pydantic-kms-secrets.svg)](https://badge.fury.io/py/pydantic-kms-secrets)
 ![Upload Python Package](https://github.com/nplutt/pydantic-kms-secrets/workflows/Upload%20Python%20Package/badge.svg)
+[![codecov](https://codecov.io/gh/nplutt/pydantic-kms-secrets/branch/master/graph/badge.svg)](https://codecov.io/gh/nplutt/pydantic-kms-secrets)
 
 Utility to decrypt and encrypt secrets using [AWS KMS keys](https://aws.amazon.com/kms/) 
 that also integrates with [pydantic](https://pydantic-docs.helpmanual.io/) models which allows for
