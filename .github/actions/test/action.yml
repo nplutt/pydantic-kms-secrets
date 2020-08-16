@@ -21,4 +21,8 @@ runs:
   - name: Upload coverage to Codecov
     shell: bash
     run: |
-      bash <(curl -s https://codecov.io/bash) -t ${{ inputs.codecov-token }} -B ${GITHUB_REF##*/} -f coverage.xml
+      bash <(curl -s https://codecov.io/bash) \
+        -t ${{ inputs.codecov-token }} \
+        -B ${{ github.ref }} \
+        -C ${{ github.sha }} \
+        -f coverage.xml
