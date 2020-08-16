@@ -1,8 +1,8 @@
 from unittest.mock import patch
 
+from pydantic import BaseSettings
 from pytest import fixture
 
-from pydantic import BaseSettings
 from pydantic_kms_secrets.pydantic import KMSSecretStr, decrypt_kms_secrets
 
 

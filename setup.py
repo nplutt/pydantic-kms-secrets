@@ -9,9 +9,7 @@ setup(
     author_email="nplutt@gmail.com",
     license="MIT",
     url="https://github.com/nplutt/pydantic-kms-secrets",
-    project_urls={
-        "Source Code": "https://github.com/nplutt/pydantic-kms-secrets/",
-    },
+    project_urls={"Source Code": "https://github.com/nplutt/pydantic-kms-secrets/",},
     keywords="pydantic aws secrets kms secrets-management environment-variables python",
     classifiers=[
         "Intended Audience :: Developers",
