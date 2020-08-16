@@ -19,10 +19,6 @@ runs:
     shell: bash
     run: pytest -v -p no:warnings --cov=src --cov-report=xml  tests
   - name: Upload coverage to Codecov
-    uses: codecov/codecov-action@v1
-    with:
-      token: ${{ inputs.codecov-token }}
-      file: ./coverage.xml
-      flags: unittests
-      name: codecov-umbrella
-      fail_ci_if_error: true
+    shell: bash
+    run: |
+      bash <(curl -s https://codecov.io/bash) -t ${{ inputs.codecov-token }} -B ${GITHUB_REF##*/} -f coverage.xml
